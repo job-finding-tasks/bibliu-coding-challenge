@@ -1,0 +1,35 @@
+{
+  "name": "bibliu-task",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "import:gutenberg": "node scripts/import/gutenberg --file-path=$FILE_PATH",
+    "test": "NODE_ENV=test mocha -r test/setup.js test/**/*.test.js --timeout 5000 --exit",
+    "test:coverage": "nyc yarn test"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "fast-xml-parser": "^3.17.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.15",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "nyc": "^15.0.1",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0"
+  },
+  "nyc": {
+    "all": true,
+    "extension": [
+      ".js"
+    ],
+    "exclude": [
+      "scripts/**/*.js"
+    ]
+  }
+}
